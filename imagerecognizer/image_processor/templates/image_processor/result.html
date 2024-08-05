@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+</head>
+<body>
+
+    <h1>Result</h1>
+
+    {% if result %}
+        <!-- Display your result here -->
+        <h1>Uploaded Image:</h1>
+        <img src="{{ image.url }}" >
+    
+        {% if result == 'Apple___Apple_scab' %}
+            <h1>The Above is Suffering from <u>Apple Scab</u></h1>
+            <p>Description: Apple scab is a common fungal disease affecting apple trees. It manifests as dark lesions on leaves and fruit.</p>
+            <p>Prescription: Apply fungicides and maintain good orchard hygiene to prevent and control apple scab.</p>
+        {% elif result == 'Apple___Black_rot' %}
+            <h1>The Above is Suffering from <u>Black Rot</u></h1>
+            <p>Description: Black rot is a fungal disease that causes dark, sunken lesions on apples, leading to fruit decay.</p>
+            <p>Prescription: Implement proper pruning, remove infected fruit, and use fungicides to manage black rot.</p>
+        {% elif result == 'Apple___Cedar_apple_rust' %}
+            <h1>The Above is Suffering from Cedar <u>Apple Rust</u></h1>
+            <p>Description: Cedar apple rust is a fungal disease characterized by orange spots on leaves and fruit.</p>
+            <p>Prescription: Use fungicides, practice pruning, and manage nearby cedar trees to control cedar apple rust.</p>
+        {% elif result == 'Apple___healthy' %}
+            <h1>The Above is <u>Healthy</u></h1>
+            <p>Description: The plant appears to be healthy with no signs of common diseases.</p>
+            <p>Prescription: Continue regular care practices to maintain the health of the plant.</p>
+        {% else %}
+            <!-- Handle unexpected or undefined result values -->
+            <p>Unknown category: {{ result }}</p>
+        {% endif %}
+    
+        {% comment %} 
+            <!-- You can uncomment and use the following line if you have a 'confidence' variable -->
+            <!-- <p>{{ confidence }}</p> -->
+        {% endcomment %}
+    
+    {% else %}
+        <p>No result available.</p>
+    {% endif %}
+    </body>
+    
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f4f4f4;
+    }
+    
+    h1 {
+        color: #333;
+    }
+    
+    img {
+        max-width: 100%;
+        height: auto;
+        margin-top: 20px;
+    }
+    
+    p {
+        font-size: 1.2em;
+    }
+    
+</style>
+</html>

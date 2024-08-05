@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <style>
+        .button-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .service-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Our Services</h1>
+    <div class="button-container">
+        <button class="service-button" onclick="showService('Service 1')">Fertilizer Recommendation</button>
+        <button class="service-button" onclick="showService('Service 2')">Crop Recommendation</button>
+        
+        <!-- Add more buttons for additional services if needed -->
+    </div>
+
+    <div id="service-info" class="service-info"></div>
+
+    <script>
+        function showService(serviceName) {
+            var serviceInfoDiv = document.getElementById("service-info");
+            serviceInfoDiv.innerHTML = "<h2>" + serviceName + "</h2><p>Description of " + serviceName + " goes here.</p>";
+        }
+    </script>
+</body>
+</html>
